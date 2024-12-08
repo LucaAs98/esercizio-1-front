@@ -27,10 +27,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <NavBar></NavBar>
-        {children}
-        <Footer></Footer>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-y-hidden`}>
+        <div className='flex flex-col h-screen'>
+          <NavBar />
+          <main className='flex-1 overflow-y-auto' style={{ maxHeight: 'calc(100vh - var(--navbar-height) - var(--footer-height))' }}>
+            {children}
+          </main>
+          <Footer />
+        </div>
       </body>
     </html>
   );
