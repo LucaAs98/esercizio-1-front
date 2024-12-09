@@ -1,10 +1,14 @@
 import React from 'react';
+import styles from './styles/NavBar.module.css';
+import Link from 'next/link';
 
 const NavBar = () => {
   return (
-    <nav className='w-full bg-gray-100 py-4 px-4 flex items-center justify-center relative sticky top-0' style={{ height: 'var(--navbar-height)' }}>
-      <div className='text-xl font-bold text-gray-800'>Articles</div>
-    </nav>
+    <Link href='/articles'>
+      <nav className={styles.navbar}>
+        <div className={styles.navText}>Articles</div>
+      </nav>
+    </Link>
   );
 };
 

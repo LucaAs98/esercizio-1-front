@@ -1,0 +1,13 @@
+.footer {
+  width: 100%;
+  background-color: var(--background-100);
+  padding: 1rem 0;
+  text-align: center;
+  position: sticky;
+  bottom: 0;
+  height: var(--footer-height);
+}
+
+.footerText {
+  color: var(--text-700);
+}

@@ -1,0 +1,28 @@
+@import './colors.css';
+@import './scrollbars.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navbar-height: 4rem;
+  --footer-height: 3.5rem;
+
+  --border-radius: 1rem;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100svh;
+  margin: 0;
+
+  background-color: var(--background-50);
+}
+
+main {
+  overflow-y: auto;
+  height: calc(calc(100svh - var(--navbar-height)) - var(--footer-height));
+  max-height: calc(calc(100svh - var(--navbar-height)) - var(--footer-height));
+}

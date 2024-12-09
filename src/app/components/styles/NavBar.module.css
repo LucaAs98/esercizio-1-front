@@ -1,0 +1,17 @@
+.navbar {
+  width: 100%;
+  background-color: var(--background-100);
+  padding: 1rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  height: var(--navbar-height);
+}
+
+.navText {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-800);
+}

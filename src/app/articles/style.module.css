@@ -1,0 +1,30 @@
+.articlesContainer {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.articlesTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--text-800);
+}
+
+.articlesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.articleLink {
+  text-decoration: none;
+}
+
+.noArticles {
+  text-align: center;
+  background: var(--background-100);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+}

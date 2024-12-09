@@ -1,0 +1,14 @@
+.errorContainer {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.errorBox {
+  background: var(--accent-50);
+  border: 1px solid var(--accent-100);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  color: var(--accent-500);
+}

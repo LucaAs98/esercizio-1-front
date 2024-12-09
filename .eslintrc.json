@@ -1,3 +1,9 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "plugins": [
+    "css-modules"
+  ],
+  "extends": ["next/core-web-vitals", "next/typescript", "plugin:css-modules/recommended"],
+  "rules": {
+    "css-modules/no-undef-class": "error" 
+  }
 }
