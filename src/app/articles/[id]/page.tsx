@@ -11,7 +11,7 @@ const SpecificArticle = async (props: { params: Promise<{ id: string }> }) => {
   try {
     const { id } = params;
 
-    const res = await fetch(`${process.env.API_URL}articles/${id}`, {
+    const res = await fetch(`${process.env.API_URL}/articles/${id}`, {
       next: {
         revalidate: 60,
       },

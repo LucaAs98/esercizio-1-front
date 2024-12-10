@@ -25,6 +25,7 @@
 .noArticles {
   text-align: center;
   background: var(--background-100);
+  color: var(--text-900);
   padding: 2rem;
   border-radius: var(--border-radius);
 }

@@ -8,7 +8,7 @@ import ErrorMessage from '../components/ErrorMessage';
 
 const ArticlesList = async () => {
   try {
-    const res = await fetch(`${process.env.API_URL}articles`, {
+    const res = await fetch(`${process.env.API_URL}/articles`, {
       next: {
         revalidate: 60, // Revalidate every minute
         tags: ['articles-list'],
