@@ -1,10 +1,10 @@
-import React from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { Calendar, User, ArrowLeft } from 'lucide-react';
-import ErrorMessage from '../../components/ErrorMessage';
-import { Article } from '../article.types';
-import styles from './style.module.css';
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { Calendar, User, ArrowLeft } from "lucide-react";
+import ErrorMessage from "../../components/ErrorMessage";
+import { Article } from "../article.types";
+import styles from "./style.module.css";
 
 const SpecificArticle = async (props: { params: Promise<{ id: string }> }) => {
   const params = await props.params;
@@ -19,14 +19,20 @@ const SpecificArticle = async (props: { params: Promise<{ id: string }> }) => {
 
     if (!res.ok)
       return (
-        <ErrorMessage error={{ title: 'Article Not Found', description: 'The article you are looking for does not exist or has been removed.' }} />
+        <ErrorMessage
+          error={{
+            title: "Article Not Found",
+            description:
+              "The article you are looking for does not exist or has been removed.",
+          }}
+        />
       );
 
     const article: Article = await res.json();
 
     return (
       <div className={styles.articleContainer}>
-        <Link href='/articles' className={styles.backLink}>
+        <Link href="/articles" className={styles.backLink}>
           <ArrowLeft size={20} />
           Back to List
         </Link>
@@ -34,7 +40,14 @@ const SpecificArticle = async (props: { params: Promise<{ id: string }> }) => {
         <article>
           {article.image && (
             <div className={styles.articleImageWrapper}>
-              <Image src={article.image} alt={article.title} layout='responsive' width={1200} height={800} className={styles.articleImage} />
+              <Image
+                src={article.image}
+                alt={article.title}
+                layout="responsive"
+                width={1200}
+                height={800}
+                className={styles.articleImage}
+              />
             </div>
           )}
 
@@ -50,10 +63,10 @@ const SpecificArticle = async (props: { params: Promise<{ id: string }> }) => {
               <div className={styles.metaItem}>
                 <Calendar size={18} className={styles.icon} />
                 <time dateTime={article.date} className={styles.metaText}>
-                  {new Date(article.date).toLocaleDateString('en-US', {
-                    day: 'numeric',
-                    month: 'long',
-                    year: 'numeric',
+                  {new Date(article.date).toLocaleDateString("en-US", {
+                    day: "numeric",
+                    month: "long",
+                    year: "numeric",
                   })}
                 </time>
               </div>
@@ -68,7 +81,15 @@ const SpecificArticle = async (props: { params: Promise<{ id: string }> }) => {
       </div>
     );
   } catch (error) {
-    return <ErrorMessage error={{ title: 'Error Loading Article', description: 'An unexpected error occurred. Please try again later.' }} />;
+    console.error(`SpecificArticle ~ error:`, error);
+    return (
+      <ErrorMessage
+        error={{
+          title: "Error Loading Article",
+          description: "An unexpected error occurred. Please try again later.",
+        }}
+      />
+    );
   }
 };
 

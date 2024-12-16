@@ -1,10 +1,7 @@
-export interface SmallArticle {
+export interface SimpleArticle {
   id: string;
   title: string;
   image: string | null;
-  summary?: string;
-  author?: string;
-  date?: string;
 }
 
 export interface Article {
